@@ -3,46 +3,43 @@ import UserList   from './components/UserList';
 import SearchBar  from './components/SearchBar';
 import Toolbar    from './components/Toolbar';
 import ActiveUser from './components/ActiveUser';
+import load       from './utils/load';
 
-
-var data = [
-	{
-		"id": 0,
-		"name": "Chad Snyder",
-		"age": 28,
-		"phone": "(629) 653-9041",
-		"image": "owl",
-		"phrase": "Owmeco jen be tezpoksim vojuz..."
-	},
-	{
-		"id": 1,
-		"name": "New User",
-		"age": 22,
-		"phone": "(999) 22--2241",
-		"image": "dog",
-		"phrase": "Owmeco jen be tezpoksim vojuz..."
-	}
-	];
 
 
 export default class App extends Component {
 	constructor(props) {
 			super(props);
 			this.state = {
-			phrase: 'hello!',
-			count: 0,
-		};
+				data    : [],
+				active  : 0,
+				term    : '',
+				sort    : {}
+			};
+		this.loadData();
+	}
+
+	loadData() {
+		load(this.props.data).then(users => {
+			this.initialData = JSON.parse(users);
+			this.setState({
+				data: this.initialData
+			});
+		});
+	}
+
+	userUpdate (active) {
+		this.setState(active);
 	}
 
 	render() {
-		console.log(data);
 		return (
 			<div className="container app">
-				<SearchBar />
-				<Toolbar />
 				<div className="row">
-					<ActiveUser />
-					<UserList data={data}/>
+					<ActiveUser data={this.state.data} active={this.state.active} />
+					<SearchBar data={this.initialData} term={this.state.term} update={this.userUpdate.bind(this)}/>
+					<Toolbar data={this.initialData} sort={this.state.sort} update={this.userUpdate.bind(this)}/>
+					<UserList data={this.state.data} update={this.userUpdate.bind(this)}/>
 				</div>
 			</div>
 		);

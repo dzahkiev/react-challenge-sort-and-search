@@ -23,6 +23,30 @@
   font-size: 2rem;
   color: #ccc;
 }
+.active-user.no-data {
+  height: 200px;
+  line-height: 200px;
+  text-align: center;
+}
+h3.name {
+  text-align: center;
+}
+.toolbar {
+  padding-left: 22px;
+  margin-bottom: 20px;
+}
 .search-bar {
-  background-color:#eee;
+  margin-bottom: 20px;
+}
+.user-data {
+  text-align: left;
+}
+.user-list {
+  border: 1px solid #ddd;
+}
+.image {
+   max-width: 50px;
+   max-height: 50px;
+   vertical-align: middle;
+   border:0;
 }
