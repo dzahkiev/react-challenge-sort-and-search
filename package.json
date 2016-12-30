@@ -1,7 +1,7 @@
 {
   "name": "react-search-and-sort",
   "version": "1.0.0",
-  "description": "",
+  "description": "[Статья на сайте](http://jsraccoon.ru/react-challenge-sort-and-search)",
   "main": "index.js",
   "scripts": {
     "generate-data": "node utils/generate-data.js"
@@ -40,5 +40,13 @@
   "dependencies": {
     "react": "^0.14.7",
     "react-dom": "^0.14.7"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dzahkiev/react-challenge-sort-and-search.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dzahkiev/react-challenge-sort-and-search/issues"
+  },
+  "homepage": "https://github.com/dzahkiev/react-challenge-sort-and-search#readme"
 }

@@ -31,14 +31,14 @@ export default class App extends Component {
 	userUpdate (active) {
 		this.setState(active);
 	}
-
+	
 	render() {
 		return (
 			<div className="container app">
 				<div className="row">
 					<ActiveUser data={this.state.data} active={this.state.active} />
 					<SearchBar data={this.initialData} term={this.state.term} update={this.userUpdate.bind(this)}/>
-					<Toolbar data={this.initialData} sort={this.state.sort} update={this.userUpdate.bind(this)}/>
+					<Toolbar data={this.state.data} sort={this.state.sort} update={this.userUpdate.bind(this)}/>
 					<UserList data={this.state.data} update={this.userUpdate.bind(this)}/>
 				</div>
 			</div>
