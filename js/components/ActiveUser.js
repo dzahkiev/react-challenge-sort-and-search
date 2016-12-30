@@ -10,7 +10,7 @@ export default ({ data, active }) => {
 	return (
 		<div className="col-xs-3 active-user">
 			<div className="thumbnail">
-				<img src={'/images/'+item.image+'.svg'} />
+				<img src={'images/'+item.image+'.svg'} />
 				<h3 className="name">{item.name}</h3>
 				<table className="table table-responsive">
 					<tbody>
